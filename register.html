@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <a href="login.html">Visit log in site.</a>
+    <form action="" target="_blank" method="get">
+        <label for="userName">Username:*</label><br>
+        <input type="text" id="userName" name="userName" maxlength="20" placeholder="Username" required autofocus><br>
+        <label for="passWord">Password:*</label><br>
+        <input type="password" id="passWord" name="passWord" required><br>
+        <label for="verify_passWord">Verify Password:*</label><br>
+        <input type="password" id="verify_passWord" name="verify_passWord" maxlength="6" required><br>
+        <label for="eMail">Email:*</label><br>
+        <input type="email" id="eMail" name="eMail" placeholder="abcd@edfg.hij" maxlength="6" required><br>
+        <label for="year">Choose year:</label>
+            <select id="year" name="year">
+                <option value="year1">1</option>
+                <option value="year2">2</option>
+                <option value="year3">3</option>
+            </select><br>
+        <label for="id">Personal ID number:</label>
+        <input type="text" id="id" name="id" pattern="[0-9]" placeholder="YYMMDD - xxxx"><br>
+        <input type="submit" value="Send" onclick="verify()">
+      </form>
+      <script>
+        function verify() {
+            var pw1 = document.getElementById("passWord").value;
+            var pw2 = document.getElementById("verify_passWord").value;
+            
+            if (pw1 == pw2 & pw1.length() <= 6 & pw2.length() <= 6){
+                return true;
+            }else{
+                alert("Passowrds are not same!")
+                return false;
+            }
+
+        }
+      </script>
+</body> 
+</html>
